@@ -1,3 +1,8 @@
+body {
+  max-width: 960px;
+  margin: auto;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -12,6 +17,18 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+}
+
+#external-links {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+}
+
+main {
+  display: inline-block;
+  vertical-align: top;
+  width: 756px;
 }
 
 /* you're welcome to edit the
@@ -30,3 +47,27 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+  main {
+    font-size: 50%;
+  }
+  img {
+    width: 50%;
+  }
+}
+
+
+
+/* 
+1. To center the entire content of a page, you can use margin and set it to auto.
+
+2. Mobile-first is a concept where developers design websites on a smaller scale because it is harder. Once mobile is designed first, larger screens will be easier.
+
+3. Floating a box shifts it the left or right, with surrounding content flowing around it. Floating is used to shift around smaller content within a page. 
+
