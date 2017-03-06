@@ -1,0 +1,18 @@
+Release 0: Equip Your New Robot
+- Determine which floor button to press:
+  - If destination floor is less than current floor
+    - Subtract one floor until you reach destination
+  - Else if destination floor is greater than current floor
+    - Add one floor until you reach destination
+  - Else 
+    - You are at your destination
+
+Release 1: Find a Real-Life Algorithm
+- Determine when to to continue driving after a stop sign:
+  - While there are people or cars nearby
+    - Patiently wait
+    - Yield when necessary 
+  - If there are no people or cars nearby
+   - Come to a complete stop
+   - Look around and wait three seconds
+   - Continue driving
