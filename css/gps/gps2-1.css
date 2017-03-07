@@ -1,0 +1,42 @@
+body {
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/dd/24/e5/dd24e5cbdc77ae6eac2c09f96de0c293.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+header h1 {
+  font-family: "Helvetica";
+  color: red;
+}
+
+.column-1 {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+  width: 40%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.column-2 {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: 40%;
+  border: 2px solid black;
+  vertical-align: top;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+}
