@@ -1,10 +1,10 @@
-
 # Release 3
 puts "How many employees will be interviewed?"
 number_of_employees = gets.chomp.to_i
 interview = 1
 
 while interview <= number_of_employees
+
 # Release 1
   puts "What is your name?"
   name = gets.chomp.to_s
@@ -61,3 +61,5 @@ while interview <= number_of_employees
   end  
   interview += 1
 end
+# Release 5
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
