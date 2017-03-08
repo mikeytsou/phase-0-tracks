@@ -10,6 +10,15 @@ fur_color = gets.chomp
 
 puts "Is the hamster a good candidate for adoption? Type 'y' or 'n'."
 adoption = gets.chomp.downcase
+until adoption == "y" || adoption == "n"
+  puts "Is the hamster a good candidate for adoption? Type 'y' or 'n'."
+  adoption = gets.chomp.downcase
+end
 
 puts "How old is the hamster?"
 age = gets.chomp
+if age == ""
+  age = nil
+else
+  age = age.to_i
+end
