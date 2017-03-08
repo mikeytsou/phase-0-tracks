@@ -22,3 +22,14 @@ if age == ""
 else
   age = age.to_i
 end
+
+# Release 3
+puts "Hamsters name is #{name}."
+puts "Hamster is #{volume} on loudness."
+puts "Hamsters color is #{fur_color}."
+puts "Hamster a good candidate for adoption? #{adoption}"
+if age == nil
+  puts "Hamsters age is nil."
+else
+  puts "Hamsters age is #{age}."
+end
