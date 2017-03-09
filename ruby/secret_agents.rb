@@ -73,6 +73,12 @@ def decrypt(string)
 end
 
 
+puts encrypt("a b c")
+puts encrypt("z e d")
+puts decrypt("b c d")
+puts decrypt("a f e")
+puts decrypt(encrypt("swordfish")) # Calling the "swordfish" argument in the method encrypt nested in decrypt works because the function executes the encrypt method nested followed by the decrypt method
+
 
 
 
