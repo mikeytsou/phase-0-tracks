@@ -11,6 +11,7 @@
 4. Calling a method that was created inside another method you created will give you an error.
 =end
 
+# METHOD DECLARATIONS
 # Release 2
 =begin
 #1 Encrypt
@@ -72,18 +73,22 @@ def decrypt(string)
   return result
 end
 
-
+=begin
 puts encrypt("a b c")
 puts encrypt("z e d")
 puts decrypt("b c d")
 puts decrypt("a f e")
 puts decrypt(encrypt("swordfish")) # Calling the "swordfish" argument in the method encrypt nested in decrypt works because the function executes the encrypt method nested followed by the decrypt method
+=end
 
-
-
-
-
-
+# DRIVER CODE
+# Release 5
+=begin
+-Ask user if they want to encrypt or decrypt a password
+-Loop so only two possible answer
+-Ask user for password
+-Set conditions for the proper methods to execute
+=end
 
 
 
