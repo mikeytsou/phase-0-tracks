@@ -26,7 +26,11 @@ def encrypt(string)
   alphabet = ("a".."z").to_a
   result = ""
   idx = 0
- 
+
+  while idx < string.length
+    letter = string[idx]
+
+  end
 end
 
 
