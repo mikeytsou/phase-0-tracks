@@ -42,6 +42,17 @@ def encrypt(string)
   return result
 end
 
+=begin
+#2 Decrypt
+-Define method with string parameter:
+  -Create and assign variables
+  -Loop through encrypted string with times loop
+  -Set condition for case of "empty space" in encrypted string and add it to result
+  -If previous condition isn't met, use string index to find alphabet index
+  -Subtract alphabet index by 1 and use modulo to loop alphabet array to find previous letter
+  -Add final alphabet index to result
+  -Return result
+=end
 
 
 
