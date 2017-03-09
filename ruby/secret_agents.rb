@@ -97,21 +97,12 @@ until answer == "decrypt" || answer == "encrypt"
   answer = gets.chomp.downcase
 end
 
+puts "Type your password."
+password = gets.chomp.to_s
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if answer == "encrypt"
+  puts "Encrypted password: #{encrypt(password)}"
+elsif answer == "decrypt"
+  puts "Decrypted password: #{decrypt(password)}"
+end
 
