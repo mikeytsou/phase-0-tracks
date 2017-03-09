@@ -58,7 +58,11 @@ def decrypt(string)
   alphabet = ("a".."z").to_a
   result = ""
   idx = string.length
+  idx.times do |i|
+    letter = string[i]
 
+
+  end
 end
 
 
