@@ -30,7 +30,16 @@ def encrypt(string)
   while idx < string.length
     letter = string[idx]
 
+    if letter == " "
+      result += " "
+    else
+      n = alphabet.index(letter)
+      n_plus = (n + 1) % alphabet.length
+      result += alphabet[n_plus]
+    end
+    idx += 1
   end
+  return result
 end
 
 
