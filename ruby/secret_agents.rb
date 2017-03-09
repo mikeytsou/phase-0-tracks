@@ -21,3 +21,38 @@
   -Add final alphabet index to result
   -Return result
 =end
+
+def encrypt(string)
+  alphabet = ("a".."z").to_a
+  result = ""
+  idx = 0
+ 
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
