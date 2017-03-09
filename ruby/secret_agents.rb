@@ -54,7 +54,12 @@ end
   -Return result
 =end
 
+def decrypt(string)
+  alphabet = ("a".."z").to_a
+  result = ""
+  idx = string.length
 
+end
 
 
 
