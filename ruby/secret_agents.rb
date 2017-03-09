@@ -90,6 +90,13 @@ puts decrypt(encrypt("swordfish")) # Calling the "swordfish" argument in the met
 -Set conditions for the proper methods to execute
 =end
 
+puts "What you like to decrypt or encrypt a password?"
+answer = gets.chomp.downcase
+until answer == "decrypt" || answer == "encrypt"
+  puts "Type encrypt or decrypt."
+  answer = gets.chomp.downcase
+end
+
 
 
 
