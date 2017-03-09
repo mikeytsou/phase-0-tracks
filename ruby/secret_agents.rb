@@ -61,9 +61,17 @@ def decrypt(string)
   idx.times do |i|
     letter = string[i]
 
-
+    if letter == " "
+      result += " "
+    else
+      n = alphabet.index(letter)
+      n_minus = (n - 1) % alphabet.length
+      result += alphabet[n_minus]
+    end
   end
+  return result
 end
+
 
 
 
