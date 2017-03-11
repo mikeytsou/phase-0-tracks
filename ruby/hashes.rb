@@ -18,7 +18,9 @@ p application
 =begin
 -Create empty hash
 -Ask client for details with keys and values
--Use combinations of ruby objects
+-Demonstrate ability to use combinations of ruby objects
+-Set condition if user wants to update keys or values
+-Print result
 =end
 
 puts "Interior Design Client Information"
