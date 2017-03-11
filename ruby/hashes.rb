@@ -17,7 +17,7 @@ p application
 # Release 3
 =begin
 -Create empty hash
--Ask client for details with keys and values
+-Ask user for details with keys and values
 -Demonstrate ability to use combinations of ruby objects
 -Set condition if user wants to update keys or values
 -Print result
@@ -67,6 +67,8 @@ elsif update.to_sym == :experience
   puts "Do you have any experience? Type 'y' or 'n'."
   client_info[:experience] = gets.chomp == 'y' ? true : false
   puts "Your updated information: #{client_info}"
+else
+  puts "That key does not exist."
 end
   
 
