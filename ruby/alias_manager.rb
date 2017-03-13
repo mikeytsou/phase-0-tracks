@@ -7,7 +7,14 @@
 -Use methods created to return result
 =end
 
+def alias_manager(name)
+  result = ''
 
+  name.each_char do |letter|
+
+  end
+  result
+end
 
 
 
