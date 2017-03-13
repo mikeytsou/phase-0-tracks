@@ -20,6 +20,11 @@ def next_vowel(letter) # if letter is a vowel, assigns next vowel
   vowels[(vowels.index(letter) + 1) % vowels.length] # % allows to loop vowels infinitely
 end
 
+def next_consonant(letter) 
+  consonants = 'bcdfghjklmnpqrstvwxyz'
+  consonants[(consonants.index(letter) + 1) % consonants.length]
+end
+
 def alias_manager(name)
   result = ''
 
