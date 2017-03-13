@@ -7,10 +7,18 @@
 -Use methods created to return result
 =end
 
+def swap_case(name) # converts string to array, capitalize each index, and return reversed string
+  array_name = name.split(' ')
+  array_name.each do |idx|
+    idx.capitalize!
+  end
+  array_name.reverse.join(' ')
+end
+
 def alias_manager(name)
   result = ''
 
-  name.each_char do |letter|
+  name.each_char do |letter| #.each_char loops a string, similar to .each for arrays
 
   end
   result
