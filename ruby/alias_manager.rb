@@ -43,9 +43,14 @@ def alias_manager(name)
   end
   swap_case(result) # applies method and returns result
 end
-p alias_manager('felicia torres')
 
-
+# Release 1
+loop do
+puts 'Enter your name:'
+input_name = gets.chomp
+break if input_name == 'quit'
+puts "Your alias is: #{alias_manager(input_name)}"
+end
 
 
 
