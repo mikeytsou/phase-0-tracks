@@ -29,11 +29,21 @@ def alias_manager(name)
   result = ''
 
   name.each_char do |letter| # .each_char loops a string, similar to .each for arrays
+    letter = letter.downcase
+    vowels = 'aeiou'
+    consonants = 'bcdfghjklmnpqrstvwxyz'
 
+    if letter == ' '
+      result += ' '
+    elsif consonants.include?(letter) # checks if letter is a consonant
+      result += next_consonant(letter) # applies method to letter and add to result
+    elsif vowels.include?(letter)
+      result += next_vowel(letter)        
+    end
   end
-  result
+  swap_case(result) # applies method and returns result
 end
-
+p alias_manager('felicia torres')
 
 
 
