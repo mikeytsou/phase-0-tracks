@@ -15,10 +15,15 @@ def swap_case(name) # converts string to array, capitalize each index, and retur
   array_name.reverse.join(' ')
 end
 
+def next_vowel(letter) # if letter is a vowel, assigns next vowel
+  vowels = 'aeiou'
+  vowels[(vowels.index(letter) + 1) % vowels.length] # % allows to loop vowels infinitely
+end
+
 def alias_manager(name)
   result = ''
 
-  name.each_char do |letter| #.each_char loops a string, similar to .each for arrays
+  name.each_char do |letter| # .each_char loops a string, similar to .each for arrays
 
   end
   result
