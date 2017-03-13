@@ -44,13 +44,17 @@ def alias_manager(name)
   swap_case(result) # applies method and returns result
 end
 
-# Release 1
+# Release 1 & 2
+names = {}
 loop do
 puts 'Enter your name:'
 input_name = gets.chomp
 break if input_name == 'quit'
 puts "Your alias is: #{alias_manager(input_name)}"
+names[input_name] = alias_manager(input_name)
 end
 
-
+names.each do |input, output|
+  puts "You entered #{input} but who is #{output}?"
+end
 
