@@ -37,6 +37,24 @@ array.map! do |x|
 end
 p array
 
+puts "hash.each output"
+full_name.each do |x, y|
+  puts "#{x} name is #{y}"
+end
+p full_name
+
+puts "hash.map output"
+new_full_name = full_name.map do |x, y|
+  "#{x} name is #{y}"
+end
+p new_full_name
+# fails due to hash data structure
+full_name.map! do |x, y|
+  "#{x} name is #{y}"
+end
+p full_name  
+# Release 2
+
 
 
 
