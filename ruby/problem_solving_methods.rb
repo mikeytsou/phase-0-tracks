@@ -12,3 +12,19 @@ def search(array, number)
 end
 integers = [4, 21, 79, 13, 90, 128]
 p search(integers, 90)
+
+# Release 1
+# Add the last two indices of the array and add the result to the end of the array
+# Repeat until num argument is reached and return array sequence
+
+def fibonacci_v1(num)
+  sequence = [0, 1]
+
+  until sequence.length == num
+    result = (sequence[-2] + sequence[-1])
+    sequence << result
+  end
+  sequence
+end
+p fibonacci_v1(100)
+
