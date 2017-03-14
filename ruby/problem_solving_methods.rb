@@ -28,3 +28,14 @@ def fibonacci_v1(num)
 end
 p fibonacci_v1(100)
 
+def fibonacci_v2(num)
+  sequence = []
+
+  (0..num-2).each do |n|
+    sequence << n if n <= 1
+    sequence << (sequence[-2] + sequence[-1]) if n >= 1
+  end
+  sequence
+end
+p fibonacci_v2(100)
+
