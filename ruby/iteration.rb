@@ -49,10 +49,10 @@ new_full_name = full_name.map do |x, y|
 end
 p new_full_name
 # fails due to hash data structure
-full_name.map! do |x, y|
-  "#{x} name is #{y}"
-end
-p full_name  
+#full_name.map! do |x, y|
+#  "#{x} name is #{y}"
+#end
+#p full_name  
 # Release 2
 
 
