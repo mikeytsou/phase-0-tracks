@@ -53,9 +53,31 @@ p new_full_name
 #  "#{x} name is #{y}"
 #end
 #p full_name  
+
 # Release 2
+numbers = [0, 1, 3, 4, 5, 6, 7]
 
+letters = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4
+}
+puts "reject less than 5 in array"
+new_numbers = numbers.reject {|x| x < 5}
+p new_numbers
 
+puts "rejects value less than 5 in hash"
+new_letters = letters.reject {|x, y| y < 3}
+p new_letters
+
+puts "selects less than 5 in array"
+new_numbers = numbers.select {|x| x < 5}
+p new_numbers
+
+puts "select value less than 5 in hash"
+new_letters = letters.select {|x, y| y < 3}
+p new_letters
 
 
 
