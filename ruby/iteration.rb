@@ -1,0 +1,16 @@
+# iterating without parameter
+5.times do
+  puts "This is a test"
+end
+# iterating with parameter
+3.times do |x|
+  puts x + x
+end
+# one line block
+4.times {|x| puts x + x}
+# using array
+array = [2, 5, 3, 7, 9]
+array.each do |x|
+  puts x + 2
+end
+p array
