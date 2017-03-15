@@ -39,3 +39,44 @@ def fibonacci_v2(num)
 end
 p fibonacci_v2(100)
 
+# Release 2
+# Bubble Sort
+# Loop an array until all numbers are swapped in correct position
+# If array[i] is greater than array[i+1], then swap those 2 positions and iterate to next number
+# If all numbers are swapped, return array
+
+def bubble_sort(array)
+  n = (array.length - 1)
+
+  loop do
+    swap = false
+
+    n.times do |i|
+      if array[i] > array[i + 1]
+        array[i], array[i + 1] = array[i + 1], array[i]
+        swap = true
+      end
+    end
+    break if swap == false
+  end
+  array
+end
+a = [2, 4, 1, 6, 4, 8, 7, 5, 10]
+p bubble_sort(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
