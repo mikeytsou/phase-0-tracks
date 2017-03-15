@@ -46,37 +46,50 @@ p fibonacci_v2(100)
 # If all numbers are swapped, return array
 
 def bubble_sort(array)
-  n = (array.length - 1)
+  array_length = array.length
 
   loop do
-    swap = false
+    swapped = false
 
-    n.times do |i|
+    (array_length - 1).times do |i|
       if array[i] > array[i + 1]
         array[i], array[i + 1] = array[i + 1], array[i]
-        swap = true
+        swapped = true
       end
     end
-    break if swap == false
+    break if not swapped # same as swapped == false
   end
   array
 end
-a = [2, 4, 1, 6, 4, 8, 7, 5, 10]
-p bubble_sort(a)
+random = [2, 4, 1, 10, 6, 4, 8, 7, 5]
+p bubble_sort(random)
 
+# Insertion Sort
+# Create and assign 'final' array a pivot value and delete that value from initial array
+# Loop through initial array and compare element with every element in the 'final' array
+# If element in initial array is less than any element in the 'final' array, insert in correct position in 'final array'
+# Loop until method returns sorted array 
 
+def insertion_sort(array)
+  final = [array[0]]
+  array.delete_at(0)
 
+  for i in array
+    final_idx = 0
 
-
-
-
-
-
-
-
-
-
-
-
-
+    while final_idx < final.length
+      if i <= final[final_idx]
+        final.insert(final_idx, i)
+        break
+      elsif final_idx == final.length - 1
+        final.insert(final_idx + 1, i)
+        break
+      end
+      final_idx += 1
+    end
+  end
+  final
+end
+random = [2, 4, 1, 10, 6, 4, 8, 7, 5]
+p insertion_sort(random)
 
