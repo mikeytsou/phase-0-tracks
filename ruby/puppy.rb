@@ -1,15 +1,33 @@
 # Release 0
 =begin
 SPECIES---------------------------
-Puppies
+Puppy
 CHARACTERISTICS-------------------
-Grooming:
-Shedding:
-Breed:
-Size:
-Color:
+Grooming: Yes
+Shedding: Yes
+Breed: Husky
+Size: Large
+Color: Black
 BEHAVIOR--------------------------
 Aggressive
 Barking
 Chewing
 =end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
