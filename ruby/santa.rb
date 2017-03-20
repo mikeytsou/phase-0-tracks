@@ -1,6 +1,6 @@
 class Santa
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity
+  attr_accessor :gender, :age
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
@@ -11,11 +11,11 @@ class Santa
   end
 
   def speak
-    puts "Ho, ho, ho! Haaaappy holidays!"
+    "Ho, ho, ho! Haaaappy holidays!"
   end
 
   def eat_milk_and_cookies(eat)
-    puts "That was a good #{eat}!"
+    "That was a good #{eat}!"
   end
 
   # setter methods:
@@ -57,6 +57,7 @@ santas = []
 santa_genders = ["Male", "Female", "Trans-Male", "Trans-Female", "Other"]
 santa_ethnicities = ["Asian", "Black", "White", "Hispanic", "Other"]
 
+=begin
 santa_genders.each_index do |idx|
   santas << Santa.new(santa_genders[idx], santa_ethnicities[idx])
 end
@@ -66,15 +67,15 @@ p santas[1].get_mad_at("Vixen")
 p santas[2].gender = "N/A"
 p santas[3].age
 p santas[4].ethnicity
+=end
 
-
-
-
-
-
-
-
-
-
-
+for i in 1..50
+  puts new_santas = Santa.new(santa_genders.sample, santa_ethnicities.sample)
+  puts new_santas.age = rand(0..140)
+  puts new_santas.gender
+  puts new_santas.ethnicity
+  puts new_santas.speak
+  puts new_santas.eat_milk_and_cookies("Chocolate Chip")
+  puts "--------------------------------------"
+end
 
