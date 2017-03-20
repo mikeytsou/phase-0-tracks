@@ -11,6 +11,18 @@ module Shout
 
 end
 
+p Shout.yell_angrily("I'm so mad")
+p Shout.yelling_happily("I'm so happy")
+
+
+
+
+
+
+
+
+
+
 
 
 
