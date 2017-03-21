@@ -4,7 +4,7 @@ class Puppy
   def initialize
     puts "Initializing new puppy instance..."
   end
-  
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
@@ -43,3 +43,19 @@ new_puppy.roll_over
 new_puppy.dog_years(5)
 new_puppy.play_dead("bang")
 
+# Release 2
+class Basketball
+
+  def initialize
+    puts "Initializing new basketball instance..."
+  end
+
+  def dribbles(num)
+    num.times {puts "*dribble*"}
+  end
+
+  def pass(name)
+    puts "*passes the ball to #{name.upcase}*"
+  end
+
+end
