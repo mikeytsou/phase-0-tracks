@@ -59,3 +59,15 @@ class Basketball
   end
 
 end
+
+players = []
+def 
+for i in 1..5
+  players << i = Basketball.new
+end
+
+
+
+
+
+
