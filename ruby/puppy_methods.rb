@@ -60,9 +60,8 @@ class Basketball
 
 end
 
-players = []
-def 
-for i in 1..5
+players = [] 
+for i in 1..50
   players << i = Basketball.new
 end
 
