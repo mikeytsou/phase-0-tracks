@@ -95,3 +95,23 @@ remove_item(new_list, "Lemonade")
 update_quantity(new_list, "Ice Cream", 1)
 print_list(new_list)
 
+# Release 4
+=begin
+What did you learn about pseudocode from working on this challenge?
+-Pseudocoding is a lot more helpful when you identify inputs and outputs.
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+-You needed to use both arrays and hashes in this challenge.
+
+What does a method return?
+-Methods implicitly return the last expression unless otherwise stated.
+
+What kind of things can you pass into methods as arguments?
+-You can pass any ruby object into methods as arguments.
+
+How can you pass information between methods?
+-You pass information between methods with return values and using them as arguments in methods.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+-My understanding of return values were solidified and passing information between methods is still a little bit confusing sometimes.
+=end
