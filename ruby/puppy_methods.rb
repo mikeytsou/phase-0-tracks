@@ -66,8 +66,7 @@ for i in 1..5
   players << i = Basketball.new
 end
 
-
-
-
-
+players.each do |player|
+  "#{player.dribbles(5)} #{player.pass("mike")}"
+end
 
