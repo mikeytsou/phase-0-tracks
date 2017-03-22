@@ -20,3 +20,18 @@ class TodoList
     @list[index]
   end
 end
+
+# Release 2
+=begin
+Are there any handy RSpec cheat sheets out there? What observations can you make from skimming them?
+-There are plenty of RPpec cheat sheets out there and from observation, the syntax is very similar to Ruby.
+
+Where is the RSpec documentation?
+-The RPsec documentation can be found on the web.
+
+What other RSpec matchers are available aside from eq?
+-Other RSpec matchers that are available are equality, comparison, predicate, and type matchers just to name a few.
+
+Can you find any free RSpec tutorials or in-depth resources that might be helpful to bookmark?
+-There are plenty of RSpec tutorials and resources on the web.
+=end
