@@ -1,3 +1,6 @@
+class WordGame
 
+
+end
 
 
