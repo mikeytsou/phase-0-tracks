@@ -50,4 +50,28 @@ class WordGame
   end
 end
 
+# USER INTERFACE
+
+puts "*" * 50
+puts "User1 - enter word(s) to be guessed:"
+word_input = gets.chomp.to_s
+game = WordGame.new(word_input)
+puts "*" * 50
+puts "User2 - guess the word(s) below:"
+puts game.encrypt_word
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
