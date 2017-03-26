@@ -18,5 +18,9 @@ describe WordGame do
     it "check initialize @wrong_letters_guessed" do 
       expect(game.wrong_letters_guessed).to eq []
     end
+
+    it "check initialize @right_letters_guessed" do 
+      expect(game.right_letters_guessed).to eq []
+    end
   end
 end
