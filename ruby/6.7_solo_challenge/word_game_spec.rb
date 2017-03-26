@@ -7,4 +7,8 @@ describe WordGame do
       expect(game.word).to eq "dev bootcamp"
     end
 
+    it "check initialize @encrypt_word" do
+      expect(game.encrypt_word).to eq "___ ________"
+    end
+  end
 end
