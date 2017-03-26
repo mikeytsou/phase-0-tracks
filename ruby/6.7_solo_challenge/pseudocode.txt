@@ -1,0 +1,42 @@
+#Method to initialize WordGuessGame:
+input: word(s)
+steps:
+  -variable for word 
+  -variable for encrypted word
+  -variable for guess limit
+  -variable for incorrect letters guessed
+  -variable for correct letters guessed
+  -variable for game status
+output:
+
+#Method to check incorrect letter:
+input: letter
+steps:
+  -update if letter is included in incorrect letters array and return encrypted array
+  -if letter is not included in the word, push letter into incorrect letters array
+  -decrement guess limit by 1
+output:
+
+#Method to check correct letter:
+input: letter
+steps:
+ -update if letter is included in correct letters array and return encrypted array
+ -if letter is included in the word, push letter into correct letters array
+ -pass letter into the replace letter method to replace that position in the word with that letter
+output: updated encrypted word
+
+#Method to replace correct letter:
+input: letter
+steps:
+ -loop while index is less than the words length
+ -if the word index position is equal to the letter, the same position in the encrypted word is assigned letter
+ -if word index position is not equal to the letter, increment index by 1
+output: updated encrypted word
+
+#Method to check game status:
+input:
+steps:
+  -if guess limit is equal to 0, game is over
+  -or if encrypted word is equal to word, game is over
+output: returns true
+
