@@ -51,7 +51,6 @@ class WordGame
 end
 
 # USER INTERFACE
-
 puts "*" * 50
 puts "User1 - enter word(s) to be guessed:"
 word_input = gets.chomp.to_s
@@ -60,7 +59,13 @@ puts "*" * 50
 puts "User2 - guess the word(s) below:"
 puts game.encrypt_word
 
+while !game.game_over
+  puts "*" * 50
+  puts "Enter a letter(you have #{game.guess_limit} attempts):"
+  guess_letter = gets.chomp.downcase[0]  
 
+
+end
 
 
 
