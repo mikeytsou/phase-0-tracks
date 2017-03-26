@@ -56,4 +56,10 @@ describe WordGame do
       expect(game.right_letters_guessed).to eq ["o"]
     end    
   end
+
+  context "#replace_letter" do
+    it "check if letter in @encrypt_word is replaced if it exists in @word" do
+      expect(game.replace_letters("o")).to eq "___ _oo_____"
+    end
+  end  
 end

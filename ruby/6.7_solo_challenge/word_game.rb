@@ -28,7 +28,18 @@ class WordGame
       @right_letters_guessed << letter
       replace_letters(letter)
     end
-  end 
+  end
+
+  def replace_letters(letters)
+    idx = 0
+    while idx < @word.length
+      if @word[idx] == letters
+        @encrypt_word[idx] = letters     
+      end
+      idx += 1
+    end
+    @encrypt_word
+  end  
 
 end
 
