@@ -44,11 +44,16 @@ describe WordGame do
       expect(game.guess_limit).to eq 10
     end
   end
-  
+
   context "#right_letter_check" do
     it "check if letter already exists in @right_letters_guessed array" do
       game.right_letters_guessed << "o"
       expect(game.right_letter_check("o")).to eq "___ ________"
     end
+
+    it "check if letter is passed into @right_letters_guessed array" do
+      game.right_letters_guessed << "o"
+      expect(game.right_letters_guessed).to eq ["o"]
+    end    
   end
 end

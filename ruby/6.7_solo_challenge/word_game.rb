@@ -24,7 +24,9 @@ class WordGame
     if @right_letters_guessed.include?(letter)
       puts "Already used '#{letter}'"
       @encrypt_word
-
+    elsif @word.include?(letter)
+      @right_letters_guessed << letter
+      replace_letters(letter)
     end
   end 
 
