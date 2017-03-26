@@ -28,6 +28,13 @@ describe WordGame do
     end    
   end
 
-  
-  
+  context "#wrong_letter_check" do
+    it "check if letter already exists in @wrong_letters_guessed array" do 
+      game.wrong_letters_guessed << "q"
+      expect(game.wrong_letter_check("q")).to eq "___ ________"
+    end
+
+
+    
+  end
 end

@@ -10,6 +10,15 @@ class WordGame
     @game_over = false
   end
 
+  def wrong_letter_check(letter)
+    if @wrong_letters_guessed.include?(letter)
+      puts "Already used '#{letter}'"
+      @encrypt_word
+
+    end
+  end
+
+
 end
 
 
