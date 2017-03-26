@@ -41,6 +41,13 @@ class WordGame
     @encrypt_word
   end  
 
+  def game_completed
+    if @guess_limit == 0
+      @game_over = true
+    elsif @encrypt_word == @word
+      @game_over = true
+    end
+  end
 end
 
 

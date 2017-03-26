@@ -61,5 +61,11 @@ describe WordGame do
     it "check if letter in @encrypt_word is replaced if it exists in @word" do
       expect(game.replace_letters("o")).to eq "___ _oo_____"
     end
+  end
+
+  context "#game_complete" do 
+    it "check if game is over" do 
+      expect(game.game_completed).to eq nil
+    end
   end  
 end
