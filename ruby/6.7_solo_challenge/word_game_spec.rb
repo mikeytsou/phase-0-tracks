@@ -10,5 +10,9 @@ describe WordGame do
     it "check initialize @encrypt_word" do
       expect(game.encrypt_word).to eq "___ ________"
     end
+
+    it "check initialize @guess_limit" do
+      expect(game.guess_limit).to eq 11
+    end
   end
 end
