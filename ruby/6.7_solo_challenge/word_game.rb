@@ -51,40 +51,38 @@ class WordGame
 end
 
 # USER INTERFACE
-puts "*" * 50
-puts "User1 - enter word(s) to be guessed:"
-word_input = gets.chomp.to_s
-game = WordGame.new(word_input)
-puts "*" * 50
-puts "User2 - guess the word(s) below:"
-puts game.encrypt_word
-
-while !game.game_over
+loop do
   puts "*" * 50
-  puts "Enter a letter(you have #{game.guess_limit} attempts):"
-  guess_letter = gets.chomp.downcase[0]  
+  puts "User1 - enter word(s) to be guessed:"
+  word_input = gets.chomp.to_s
+  game = WordGame.new(word_input)
+  
+  puts "*" * 50
+  puts "User2 - guess the word(s) below:"
+  puts game.encrypt_word
 
-  if game.right_letter_check(guess_letter)
-    puts "Correct! Letters used: #{game.wrong_letters_guessed}"
-    puts game.encrypt_word
-    puts "Congratulations! You guessed the word!" if game.game_completed    
-  elsif game.wrong_letter_check(guess_letter)
-    puts "Wrong! Letters used: #{game.wrong_letters_guessed}"
-    puts game.encrypt_word
-    puts "Loser! You word(s) was '#{game.word}'" if game.game_completed
+  while !game.game_over
+    puts "*" * 50
+    puts "Enter a letter(you have #{game.guess_limit} attempts):"
+    guess_letter = gets.chomp.downcase[0]  
+
+    if game.right_letter_check(guess_letter)
+      puts "Correct! Letters used: #{game.wrong_letters_guessed}"
+      puts game.encrypt_word
+      puts "Congratulations! You guessed the word!" if game.game_completed    
+    elsif game.wrong_letter_check(guess_letter)
+      puts "Wrong! Letters used: #{game.wrong_letters_guessed}"
+      puts game.encrypt_word
+      puts "Loser! You word(s) was '#{game.word}'" if game.game_completed
+    end
+  end
+
+  puts "*" * 50
+  puts "Would you like to play again?(type y/n)"
+  continue = gets.chomp.downcase[0]
+  if continue == "n"
+    puts "Thanks for playing~ Bye!" 
+    break
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
