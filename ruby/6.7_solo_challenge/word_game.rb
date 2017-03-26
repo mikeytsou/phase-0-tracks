@@ -73,7 +73,7 @@ loop do
     elsif game.wrong_letter_check(guess_letter)
       puts "Wrong! Letters used: #{game.wrong_letters_guessed}"
       puts game.encrypt_word
-      puts "Loser! You word(s) was '#{game.word}'" if game.game_completed
+      puts "Loser! The word(s) was '#{game.word}'" if game.game_completed
     end
   end
 
