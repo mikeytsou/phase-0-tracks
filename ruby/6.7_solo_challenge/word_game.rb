@@ -64,7 +64,15 @@ while !game.game_over
   puts "Enter a letter(you have #{game.guess_limit} attempts):"
   guess_letter = gets.chomp.downcase[0]  
 
-
+  if game.right_letter_check(guess_letter)
+    puts "Correct! Letters used: #{game.wrong_letters_guessed}"
+    puts game.encrypt_word
+    puts "Congratulations! You guessed the word!" if game.game_completed    
+  elsif game.wrong_letter_check(guess_letter)
+    puts "Wrong! Letters used: #{game.wrong_letters_guessed}"
+    puts game.encrypt_word
+    puts "Loser! You word(s) was '#{game.word}'" if game.game_completed
+  end
 end
 
 
