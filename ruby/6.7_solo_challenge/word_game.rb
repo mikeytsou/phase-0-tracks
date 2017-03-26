@@ -14,7 +14,9 @@ class WordGame
     if @wrong_letters_guessed.include?(letter)
       puts "Already used '#{letter}'"
       @encrypt_word
-
+    elsif !@word.include?(letter)
+      @guess_limit -= 1      
+      @wrong_letters_guessed << letter 
     end
   end
 

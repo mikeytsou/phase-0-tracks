@@ -34,7 +34,10 @@ describe WordGame do
       expect(game.wrong_letter_check("q")).to eq "___ ________"
     end
 
-
+    it "check if letter is passed into @wrong_letters_guessed array" do
+      game.wrong_letter_check("q")
+      expect(game.wrong_letters_guessed).to eq ["q"]
+    end
     
   end
 end
