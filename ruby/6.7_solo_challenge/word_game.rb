@@ -20,6 +20,13 @@ class WordGame
     end
   end
 
+  def right_letter_check(letter)
+    if @right_letters_guessed.include?(letter)
+      puts "Already used '#{letter}'"
+      @encrypt_word
+
+    end
+  end 
 
 end
 
