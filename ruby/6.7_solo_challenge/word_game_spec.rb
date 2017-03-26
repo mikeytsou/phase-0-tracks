@@ -38,6 +38,10 @@ describe WordGame do
       game.wrong_letter_check("q")
       expect(game.wrong_letters_guessed).to eq ["q"]
     end
-    
+
+    it "check if @guess_limit updates" do 
+      game.wrong_letter_check("q")
+      expect(game.guess_limit).to eq 10
+    end    
   end
 end
