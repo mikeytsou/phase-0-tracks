@@ -13,3 +13,15 @@ for (var i = 0; i < horseNames.length; i += 1) {
   horseObjects[horseNames[i]] = horseColors[i];
 }
 console.log(horseObjects);
+
+//Release 2
+function Car(make, model, year) {
+  console.log("Our new car:", this);
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.honk = function() { console.log("*HOOONK*"); };
+
+  console.log(`A ${year} ${make} ${model} was bought!`);
+}
+
