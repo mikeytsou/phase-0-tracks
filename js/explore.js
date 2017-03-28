@@ -68,7 +68,6 @@ function reverse(string) {
 
 //DRIVER CODE
 var reverseString = reverse("dev bootcamp");
-var x = 5; y = 10
 
 if (reverseString.length > 5) {
   console.log(`You will be attending: ${reverseString}`);
