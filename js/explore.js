@@ -66,10 +66,11 @@ function reverse(string) {
   return result.join("");
 }
 
-
-
-
-
-
-
+//DRIVER CODE
+var x = 5; y = 10
+if (x + y == 15) {
+  console.log(reverse("CHRISTMAS"));
+} else {
+  console.log("NOPE")
+}
 
