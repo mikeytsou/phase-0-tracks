@@ -25,3 +25,14 @@ function Car(make, model, year) {
   console.log(`A ${year} ${make} ${model} was bought!`);
 }
 
+console.log("Let go car shopping");
+
+var newCarOne = new Car("Honda", "Accord", 2014);
+console.log(newCarOne);
+console.log("Congrats on your new car, honk your horn!");
+newCarOne.honk();
+
+var newCarTwo = new Car("BMW", "5 Series", 2017);
+console.log(newCarTwo)
+console.log("Congrats on your new car, honk your horn!");
+newCarTwo.honk();
