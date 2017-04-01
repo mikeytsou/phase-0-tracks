@@ -33,3 +33,12 @@ console.log(longestWord(teams));
 // - return true
 // Output: returns true or false
 
+function findMatch(objectOne, objectTwo) {
+  for (var key in objectOne) {
+    if (objectTwo.hasOwnProperty(key) && objectOne[key] === objectTwo[key]) {
+      return true;
+    }
+  }
+  return false;
+}
+
