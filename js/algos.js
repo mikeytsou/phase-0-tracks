@@ -42,3 +42,8 @@ function findMatch(objectOne, objectTwo) {
   return false;
 }
 
+// DRIVER CODE
+var reportOne = {name: "Sam", age: 21, math: 80, english: 90};
+var reportTwo = {name: "Jen", age: 23, science: 75, math: 80};
+
+console.log(findMatch(reportOne, reportTwo));
