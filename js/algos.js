@@ -57,7 +57,7 @@ function generateArray(num) {
     var length = Math.floor(Math.random() * 10) + 1;
 
     for (var lettersIdx = 0; lettersIdx < length; lettersIdx += 1) {
-      var randomLetter = Math.floor(Math.random() * letters.length) + 0;
+      var randomLetter = Math.floor(Math.random() * letters.length);
       string += letters[randomLetter];
     }
     array.push(string);
@@ -70,19 +70,28 @@ function generateArray(num) {
 var holidays = ["labor", "veterans", "thanksgiving", "christmas"];
 var teams = ["warriors", "niners", "raiders", "athletics", "giants"];
 
-console.log(longestWord(holidays));
-console.log(longestWord(teams));
+console.log(longestWord(holidays)); // returns thanksgiving
+console.log(longestWord(teams)); // returns athletics
 
 // Release 1
 var reportOne = {name: "Sam", age: 21, math: 80, english: 90};
 var reportTwo = {name: "Jen", age: 23, science: 75, math: 80};
 
-console.log(findMatch(reportOne, reportTwo));
+console.log(findMatch(reportOne, reportTwo)); // returns true
+
+var reportThree = {name: "Sam", age: 21, math: 80, english: 90};
+var reportFour = {name: "Jen", age: 23, science: 75, math: 81};
+
+console.log(findMatch(reportThree, reportFour)); // returns false
 
 // Release 2
 console.log(generateArray(3));
 
-
+for (var i = 0; i < 10; i += 1) {
+  var arrayTest = generateArray(3);
+  console.log("Array of strings: " + arrayTest);
+  console.log("Longest string: " + longestWord(arrayTest) + "\n");
+}
 
 
 
