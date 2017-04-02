@@ -48,7 +48,39 @@ function findMatch(objectOne, objectTwo) {
 // - return array after loop completes
 // Output: array of strings equal to number length
 
+function generateArray(num) {
+  var array = [];
 
+  for (var arrayIdx = 0; arrayIdx < num; arrayIdx += 1) {
+    var string = "";
+    var letters = "abcdefghijklmnopqrstuvwxyz"
+    var length = Math.floor(Math.random() * 10) + 1;
+
+    for (var lettersIdx = 0; lettersIdx < length; lettersIdx += 1) {
+      var randomLetter = Math.floor(Math.random() * letters.length) + 0;
+      string += letters[randomLetter];
+    }
+    array.push(string);
+  }
+  return array;
+}
+
+// DRIVER CODE
+// Release 0
+var holidays = ["labor", "veterans", "thanksgiving", "christmas"];
+var teams = ["warriors", "niners", "raiders", "athletics", "giants"];
+
+console.log(longestWord(holidays));
+console.log(longestWord(teams));
+
+// Release 1
+var reportOne = {name: "Sam", age: 21, math: 80, english: 90};
+var reportTwo = {name: "Jen", age: 23, science: 75, math: 80};
+
+console.log(findMatch(reportOne, reportTwo));
+
+// Release 2
+console.log(generateArray(3));
 
 
 
