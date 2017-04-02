@@ -18,13 +18,6 @@ function longestWord(array) {
   return longestWord
 }
 
-// DRIVER CODE
-var holidays = ["labor", "veterans", "thanksgiving", "christmas"];
-var teams = ["warriors", "niners", "raiders", "athletics", "giants"];
-
-console.log(longestWord(holidays));
-console.log(longestWord(teams));
-
 // Release 1
 // Method that takes two objects and see if they share key-value pairs
 // Input: two objects
@@ -42,8 +35,24 @@ function findMatch(objectOne, objectTwo) {
   return false;
 }
 
-// DRIVER CODE
-var reportOne = {name: "Sam", age: 21, math: 80, english: 90};
-var reportTwo = {name: "Jen", age: 23, science: 75, math: 80};
+// Release 2
+// Method that takes a number and returns an array of strings equal to the number length
+// Input: number
+// - variable for empty array
+// - iterate while array length is less than number length
+// - variable for empty string, alphabet, and random number between 1 - 10 inclusive
+// - iterate within loop while letters index is less than random number
+// - variable for random number within alphabet length
+// - add letter to empty string using the random number within alphabet
+// - push string to array
+// - return array after loop completes
+// Output: array of strings equal to number length
 
-console.log(findMatch(reportOne, reportTwo));
+
+
+
+
+
+
+
+
