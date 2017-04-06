@@ -1,0 +1,144 @@
+Release 2
+1. Display the information in one table (either table is fine).
+sqlite> SELECT * FROM students;
+id          name           exam_date            exam_score  subject_id
+----------  -------------  -------------------  ----------  ----------
+1           Kassidy Brown  2017-04-17 08:10:00  85.75       3         
+2           Andrea Lee     2017-04-17 09:10:00  89.25       1         
+3           Cory Smith     2017-04-18 11:30:00  74.5        6         
+4           James Dolan    2017-04-18 01:40:00  63          5         
+5           Michael Irvin  2017-04-19 07:00:00  75.75       7         
+6           Max Haley      2017-04-19 08:30:00  92.5        2         
+7           Jim Brown      2017-04-20 12:15:00  95.75       4         
+8           Michelle Chu   2017-04-20 01:45:00  98.5        2         
+9           Jasmine Zeng   2017-04-21 09:20:00  93.25       7         
+10          Maria Duzon    2017-04-21 10:30:00  82.75       4         
+11          David Durkin   2017-04-22 07:45:00  77.5        3         
+12          Stephen Murph  2017-04-22 09:45:00  78.5        1         
+13          Brandon Nelso  2017-04-23 10:50:00  87          5         
+14          Colin Engler   2017-04-23 11:45:00  91.25       2         
+15          Marvin Yang    2017-04-23 12:55:00  98.5        1         
+
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+sqlite> UPDATE students
+   ...> SET exam_score = 75.25
+   ...> WHERE name = "David Durkin";
+sqlite> SELECT * FROM students;
+id          name           exam_date            exam_score  subject_id
+----------  -------------  -------------------  ----------  ----------
+1           Kassidy Brown  2017-04-17 08:10:00  85.75       3         
+2           Andrea Lee     2017-04-17 09:10:00  89.25       1         
+3           Cory Smith     2017-04-18 11:30:00  74.5        6         
+4           James Dolan    2017-04-18 01:40:00  63          5         
+5           Michael Irvin  2017-04-19 07:00:00  75.75       7         
+6           Max Haley      2017-04-19 08:30:00  92.5        2         
+7           Jim Brown      2017-04-20 12:15:00  95.75       4         
+8           Michelle Chu   2017-04-20 01:45:00  98.5        2         
+9           Jasmine Zeng   2017-04-21 09:20:00  93.25       7         
+10          Maria Duzon    2017-04-21 10:30:00  82.75       4         
+11          David Durkin   2017-04-22 07:45:00  75.25       3         
+12          Stephen Murph  2017-04-22 09:45:00  78.5        1         
+13          Brandon Nelso  2017-04-23 10:50:00  87          5         
+14          Colin Engler   2017-04-23 11:45:00  91.25       2         
+15          Marvin Yang    2017-04-23 12:55:00  98.5        1         
+
+
+3. Display the information in both tables using one query.
+sqlite> SELECT * FROM students, subjects WHERE students.subject_id = subjects.id;
+id          name           exam_date            exam_score  subject_id  id          class        
+----------  -------------  -------------------  ----------  ----------  ----------  -------------
+1           Kassidy Brown  2017-04-17 08:10:00  85.75       3           3           Language Arts
+2           Andrea Lee     2017-04-17 09:10:00  89.25       1           1           Mathematics  
+3           Cory Smith     2017-04-18 11:30:00  74.5        6           6           Physical Educ
+4           James Dolan    2017-04-18 01:40:00  63          5           5           Arts         
+5           Michael Irvin  2017-04-19 07:00:00  75.75       7           7           Music        
+6           Max Haley      2017-04-19 08:30:00  92.5        2           2           Science      
+7           Jim Brown      2017-04-20 12:15:00  95.75       4           4           Social Studie
+8           Michelle Chu   2017-04-20 01:45:00  98.5        2           2           Science      
+9           Jasmine Zeng   2017-04-21 09:20:00  93.25       7           7           Music        
+10          Maria Duzon    2017-04-21 10:30:00  82.75       4           4           Social Studie
+11          David Durkin   2017-04-22 07:45:00  75.25       3           3           Language Arts
+12          Stephen Murph  2017-04-22 09:45:00  78.5        1           1           Mathematics  
+13          Brandon Nelso  2017-04-23 10:50:00  87          5           5           Arts         
+14          Colin Engler   2017-04-23 11:45:00  91.25       2           2           Science      
+15          Marvin Yang    2017-04-23 12:55:00  98.5        1           1           Mathematics  
+
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+sqlite> SELECT students.name, students.exam_date, students.exam_score, subjects.class FROM students
+   ...> JOIN subjects ON students.subject_id = subjects.id;
+name           exam_date            exam_score  class        
+-------------  -------------------  ----------  -------------
+Kassidy Brown  2017-04-17 08:10:00  85.75       Language Arts
+Andrea Lee     2017-04-17 09:10:00  89.25       Mathematics  
+Cory Smith     2017-04-18 11:30:00  74.5        Physical Educ
+James Dolan    2017-04-18 01:40:00  63          Arts         
+Michael Irvin  2017-04-19 07:00:00  75.75       Music        
+Max Haley      2017-04-19 08:30:00  92.5        Science      
+Jim Brown      2017-04-20 12:15:00  95.75       Social Studie
+Michelle Chu   2017-04-20 01:45:00  98.5        Science      
+Jasmine Zeng   2017-04-21 09:20:00  93.25       Music        
+Maria Duzon    2017-04-21 10:30:00  82.75       Social Studie
+David Durkin   2017-04-22 07:45:00  75.25       Language Arts
+Stephen Murph  2017-04-22 09:45:00  78.5        Mathematics  
+Brandon Nelso  2017-04-23 10:50:00  87          Arts         
+Colin Engler   2017-04-23 11:45:00  91.25       Science      
+Marvin Yang    2017-04-23 12:55:00  98.5        Mathematics  
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+sqlite> DELETE FROM students
+   ...> WHERE exam_score < 70
+   ...> AND subject_id = 5;
+sqlite> SELECT * FROM students;
+id          name           exam_date            exam_score  subject_id
+----------  -------------  -------------------  ----------  ----------
+1           Kassidy Brown  2017-04-17 08:10:00  85.75       3         
+2           Andrea Lee     2017-04-17 09:10:00  89.25       1         
+3           Cory Smith     2017-04-18 11:30:00  74.5        6         
+5           Michael Irvin  2017-04-19 07:00:00  75.75       7         
+6           Max Haley      2017-04-19 08:30:00  92.5        2         
+7           Jim Brown      2017-04-20 12:15:00  95.75       4         
+8           Michelle Chu   2017-04-20 01:45:00  98.5        2         
+9           Jasmine Zeng   2017-04-21 09:20:00  93.25       7         
+10          Maria Duzon    2017-04-21 10:30:00  82.75       4         
+11          David Durkin   2017-04-22 07:45:00  75.25       3         
+12          Stephen Murph  2017-04-22 09:45:00  78.5        1         
+13          Brandon Nelso  2017-04-23 10:50:00  87          5         
+14          Colin Engler   2017-04-23 11:45:00  91.25       2         
+15          Marvin Yang    2017-04-23 12:55:00  98.5        1         
+
+
+Release 3
+1. There are lots of different kinds of joins. What are they? Can you apply different conditions to a join to change what's displayed? Can you bookmark any good diagrams that will help you tell different joins apart in the future?
+In SQLite, there are inner and outer joins and different conditions can be applied to both that changes what's displayed. I've already bookmarked a good resource on SQL for the future.
+
+2. Try a few different joins in your database, and record the commands and the output in queries.txt.
+sqlite> SELECT * FROM students
+   ...> LEFT JOIN subjects ON students.subject_id = subjects.id;
+id          name           exam_date            exam_score  subject_id  id          class        
+----------  -------------  -------------------  ----------  ----------  ----------  -------------
+1           Kassidy Brown  2017-04-17 08:10:00  85.75       3           3           Language Arts
+2           Andrea Lee     2017-04-17 09:10:00  89.25       1           1           Mathematics  
+3           Cory Smith     2017-04-18 11:30:00  74.5        6           6           Physical Educ
+5           Michael Irvin  2017-04-19 07:00:00  75.75       7           7           Music        
+6           Max Haley      2017-04-19 08:30:00  92.5        2           2           Science      
+7           Jim Brown      2017-04-20 12:15:00  95.75       4           4           Social Studie
+8           Michelle Chu   2017-04-20 01:45:00  98.5        2           2           Science      
+9           Jasmine Zeng   2017-04-21 09:20:00  93.25       7           7           Music        
+10          Maria Duzon    2017-04-21 10:30:00  82.75       4           4           Social Studie
+11          David Durkin   2017-04-22 07:45:00  75.25       3           3           Language Arts
+12          Stephen Murph  2017-04-22 09:45:00  78.5        1           1           Mathematics  
+13          Brandon Nelso  2017-04-23 10:50:00  87          5           5           Arts         
+14          Colin Engler   2017-04-23 11:45:00  91.25       2           2           Science      
+15          Marvin Yang    2017-04-23 12:55:00  98.5        1           1           Mathematics  
+
+sqlite> SELECT * FROM students
+   ...> LEFT JOIN subjects ON students.subject_id = subjects.id
+   ...> WHERE subject_id = 1;
+id          name        exam_date            exam_score  subject_id  id          class      
+----------  ----------  -------------------  ----------  ----------  ----------  -----------
+2           Andrea Lee  2017-04-17 09:10:00  89.25       1           1           Mathematics
+12          Stephen Mu  2017-04-22 09:45:00  78.5        1           1           Mathematics
+15          Marvin Yan  2017-04-23 12:55:00  98.5        1           1           Mathematics
