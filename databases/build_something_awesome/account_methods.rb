@@ -50,11 +50,35 @@ def balance(db)
   last_balance[0][0]
 end
 
+def transaction(db, username, date, amount)
+  format_date = date_conversion(date)
+  format_amount = currency_conversion(amount)
+  current_balance = balance(db)
+  if deposit
+    description = "Deposit"
+    new_balance = current_balance + format_amount
+    db.execute("INSERT INTO accounts (username, date, description, amount, balance) VALUES (?, ?, ?, ?, ?)", [username, format_date, description, format_amount, new_balance])
+  elsif withdraw
+    description = "Withdraw"
+    new_balance = current_balance - format_amount
+    db.execute("INSERT INTO accounts (username, date, description, amount, balance) VALUES (?, ?, ?, ?, ?)", [username, format_date, description, format_amount, new_balance])
+  end
+end
 
+def deposit
+  true
+end
+
+def withdraw
+  true  
+end
 
 # TEST
 db = create_database
 date = Time.now
 
-# create_new_user(db, "mikeytsou", date, 10.54)
+# create_new_user(db, "mikeytsou", date, 10.548)
+transaction(db, "mikeytsou", date, 40.000)
 
+# test = db.execute("SELECT id FROM accounts")
+# p test[-1]["id"]
