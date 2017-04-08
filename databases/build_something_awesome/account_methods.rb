@@ -3,6 +3,7 @@ require "sqlite3"
 # Create database and table
 def create_database
   db = SQLite3::Database.new("account.db")
+  db.results_as_hash = true
   create_accounts_table_cmd = <<-SQL
     CREATE TABLE IF NOT EXISTS accounts (
       id INTEGER PRIMARY KEY,
@@ -33,17 +34,27 @@ end
 
 # Round two decimal points
 def currency_conversion(currency)
-  currency_convert = (currency).round(2)
+  currency_convert = sprintf("%.2f", currency).to_f
 end
 
-# Converts date to mm/dd/yyy format
+# Converts date to mm/dd/yyyy format
 def date_conversion(date)
-  date_convert = date.strftime("%d-%m-%Y")
+  date_convert = date.strftime("%m-%d-%Y")
 end
+
+# Selects most recent balance
+def balance(db)
+  data = db.execute("SELECT id FROM accounts")
+  id = data[-1]["id"]
+  last_balance = db.execute("SELECT balance FROM accounts WHERE id=?", [id])
+  last_balance[0][0]
+end
+
+
 
 # TEST
 db = create_database
 date = Time.now
 
-create_new_user(db, "mikeytsou", date, 2313.4324)
-p check_existing_user(db, "mikeytsou")
+# create_new_user(db, "mikeytsou", date, 10.54)
+
