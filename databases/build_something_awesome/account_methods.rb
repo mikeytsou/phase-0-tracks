@@ -42,8 +42,8 @@ end
 
 # Return most recent balance
 def balance(db, username)
-  data = db.execute("SELECT id FROM accounts WHERE username=?", [username])
-  id = data[-1]["id"]
+  user_id = db.execute("SELECT id FROM accounts WHERE username=?", [username])
+  id = user_id[-1]["id"]
   balance = db.execute("SELECT balance FROM accounts WHERE id=?", [id])
   balance[0][0]
 end
