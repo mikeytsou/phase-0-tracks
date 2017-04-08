@@ -31,3 +31,19 @@ def check_existing_user(db, username)
   db.execute("SELECT 1 FROM accounts WHERE username = ?", [username]).length > 0
 end
 
+# Round two decimal points
+def currency_conversion(currency)
+  currency_convert = (currency).round(2)
+end
+
+# Converts date to mm/dd/yyy format
+def date_conversion(date)
+  date_convert = date.strftime("%d-%m-%Y")
+end
+
+# TEST
+db = create_database
+date = Time.now
+
+create_new_user(db, "mikeytsou", date, 2313.4324)
+p check_existing_user(db, "mikeytsou")
