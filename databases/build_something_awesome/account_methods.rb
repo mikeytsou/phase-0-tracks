@@ -1,5 +1,3 @@
-require "sqlite3"
-
 # Create database and table
 def create_database
   db = SQLite3::Database.new("account.db")
@@ -43,24 +41,24 @@ def date_conversion(date)
 end
 
 # Return most recent balance
-def balance(db)
-  data = db.execute("SELECT id FROM accounts")
+def balance(db, username)
+  data = db.execute("SELECT id FROM accounts WHERE username=?", [username])
   id = data[-1]["id"]
   balance = db.execute("SELECT balance FROM accounts WHERE id=?", [id])
   balance[0][0]
 end
 
 # Depending on deposit(add) or withdraw(subtract), update the balance 
-def transaction(db, username, date, amount)
+def transaction(db, username, date, amount, deposit)
   format_date = date_conversion(date)
   format_amount = currency_conversion(amount)
-  current_balance = balance(db)
+  current_balance = balance(db, username)
   if deposit
     description = "Deposit"
     new_balance = current_balance + format_amount
     format_balance = currency_conversion(new_balance)
     db.execute("INSERT INTO accounts (username, date, description, amount, balance) VALUES (?, ?, ?, ?, ?)", [username, format_date, description, format_amount, format_balance])
-  elsif withdraw
+  elsif !deposit
     description = "Withdraw"
     new_balance = current_balance - format_amount
     format_balance = currency_conversion(new_balance)    
@@ -68,92 +66,24 @@ def transaction(db, username, date, amount)
   end
 end
 
-def deposit
-  true
-end
-
-def withdraw
-  true  
+# Print detailed balance log(key-value pairs)
+def print_balance_log(db, username)
+  balances = db.execute("SELECT * FROM accounts WHERE username=? ORDER BY id DESC LIMIT 1", [username])
+  balances.each do |info|
+    puts "-" * 100 
+    puts "Most recent transaction and current balance:"
+    puts "Username: #{info['username']} | Date: #{info['date']} | Description: #{info['description']} | Amount: #{info['amount']} | Balance: #{info['balance']}"
+    puts "-" * 100 
+  end
 end
 
 # Print detailed account log(key-value pairs)
 def print_account_log(db, username)
-  accounts = db.execute("SELECT * FROM accounts")
-
+  accounts = db.execute("SELECT * FROM accounts WHERE username=?", [username])
+  puts "Account history:"
   accounts.each do |info|
     puts "-" * 100
-    puts "Date: #{info['date']} | Description: #{info['description']} | Amount: #{info['amount']} | Balance: #{info['balance']}"
+    puts "Username: #{info['username']} | Date: #{info['date']} | Description: #{info['description']} | Amount: #{info['amount']} | Balance: #{info['balance']}"
   end
+  puts "-" * 100
 end
-
-# USER INTERFACE
-def start_program(db)
-  date = Time.now
-  puts "Welcome to Global Bank"
-  puts "-" * 100  
-  action = nil
-  until action == 1 || action == 2 || action == 3
-    puts "What would you like to do?\n1. Log In\n2. Create Account\n3. Exit"
-    puts "-" * 100
-    action = gets.chomp.to_i
-  end
-  
-  if action == 3 # Exit
-    puts "Goodbye~"
-
-  elsif action == 2 # Create Account
-    puts "Create a username:"
-    valid_name = false  
-    until valid_name == true
-      username = gets.chomp.downcase
-      if check_existing_user(db, username)
-        puts "Enter another username, that one is taken."
-      else
-        valid_name = true
-      end
-    end
-    puts "How much money would you like to initially deposit? (ex. 100.00)"
-    initial_deposit = gets.chomp.to_f
-    create_new_user(db, username, date, initial_deposit)
-
-  elsif action == 1 # Log In
-    puts "Enter your username:"
-    valid_name = false
-    until valid_name == true
-      username = gets.chomp.downcase
-      if check_existing_user(db, username)
-        valid_name = true
-      else
-        puts "Username doesn't exist. Try again."
-      end
-    end
-  end
-end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
