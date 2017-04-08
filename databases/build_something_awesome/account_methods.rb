@@ -34,7 +34,7 @@ end
 
 # Round two decimal points
 def currency_conversion(currency)
-  currency_convert = sprintf("%.2f", currency).to_f
+  currency_convert = (currency).round(2)
 end
 
 # Converts date to mm/dd/yyyy format
@@ -42,14 +42,15 @@ def date_conversion(date)
   date_convert = date.strftime("%m-%d-%Y")
 end
 
-# Selects most recent balance
+# Return most recent balance
 def balance(db)
   data = db.execute("SELECT id FROM accounts")
   id = data[-1]["id"]
-  last_balance = db.execute("SELECT balance FROM accounts WHERE id=?", [id])
-  last_balance[0][0]
+  balance = db.execute("SELECT balance FROM accounts WHERE id=?", [id])
+  balance[0][0]
 end
 
+# Depending on deposit(add) or withdraw(subtract), update the balance 
 def transaction(db, username, date, amount)
   format_date = date_conversion(date)
   format_amount = currency_conversion(amount)
@@ -57,11 +58,13 @@ def transaction(db, username, date, amount)
   if deposit
     description = "Deposit"
     new_balance = current_balance + format_amount
-    db.execute("INSERT INTO accounts (username, date, description, amount, balance) VALUES (?, ?, ?, ?, ?)", [username, format_date, description, format_amount, new_balance])
+    format_balance = currency_conversion(new_balance)
+    db.execute("INSERT INTO accounts (username, date, description, amount, balance) VALUES (?, ?, ?, ?, ?)", [username, format_date, description, format_amount, format_balance])
   elsif withdraw
     description = "Withdraw"
     new_balance = current_balance - format_amount
-    db.execute("INSERT INTO accounts (username, date, description, amount, balance) VALUES (?, ?, ?, ?, ?)", [username, format_date, description, format_amount, new_balance])
+    format_balance = currency_conversion(new_balance)    
+    db.execute("INSERT INTO accounts (username, date, description, amount, balance) VALUES (?, ?, ?, ?, ?)", [username, format_date, description, format_amount, format_balance])
   end
 end
 
@@ -73,12 +76,13 @@ def withdraw
   true  
 end
 
-# TEST
-db = create_database
-date = Time.now
+# Print detailed account log(key-value pairs)
+def print_account_log(db, username)
+  accounts = db.execute("SELECT * FROM accounts")
 
-# create_new_user(db, "mikeytsou", date, 10.548)
-transaction(db, "mikeytsou", date, 40.000)
+  accounts.each do |info|
+    puts "-" * 100
+    puts "Date: #{info['date']} | Description: #{info['description']} | Amount: #{info['amount']} | Balance: #{info['balance']}"
+  end
+end
 
-# test = db.execute("SELECT id FROM accounts")
-# p test[-1]["id"]
