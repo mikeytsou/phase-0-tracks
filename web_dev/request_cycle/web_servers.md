@@ -8,8 +8,11 @@ Do one thing and do it well, expect the output of every program to become the in
 * **In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?**
 
 VPS is a virtual server that is partitioned so that it has its own operating system, disc space, and bandwidth. A physical dedicated server that resides in a data center is used for VPS hosting and that server is divided into various spaces to create its own virtual server. The owner of that virtual server sees only their virtual environment and can reboot their server or use it as if it was their own dedicated server. VPS is similar to how VMware or Virtual Box works. The advantages of VPS are:
+
 Less expensive than full dedicated physical server and customize your needs so you pay for what you want.
+
 Sense of privacy since you don't share your OS with anyone else, there are no other websites on your server to potentially access your files.
+
 More control and have root access  and ability to use scripts that may not be allowed in shared hosting environments.
 
 * **Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?**
