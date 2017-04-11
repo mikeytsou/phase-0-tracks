@@ -3,19 +3,29 @@
 * **What are some common HTTP status codes?**
 
 Successful codes:
+
 200 - represent successful response to a request
+
 1xx - represent informational messages(rare)
+
 3xx - represent redirection response
+
 Error codes come in the form of 4xx(client-side) or 5xx(server-side) statuses:
+
 403 - (forbidden) access to resource is forbidden
+
 404 - (not found) requested resource is no longer available
+
 500 - (internal server error) 
+
 503 - (service unavailable) web server not available
+
 504 - (gateway timeout) 
 
 * **What is the difference between a GET request and a POST request? When might each be used?**
 
 GET requests data from a specified resource and are used to retrieve remote data. GET requests can be cached, remain in the browser history, can be bookmarked, should never be used when dealing with sensitive data, have length restrictions, and should be used only to retrieve data. 
+
 POST submits data to be processed to a specified resource and are used to insert or update remote data. POST requests are ever cached, do not remain in the browser history, cannot be bookmarked, and have no restrictions on data length.
 
 * **Optional bonus question: What is a cookie (the technical kind, not the delicious kind)?**
