@@ -1,0 +1,129 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Open Sans", "Roboto", "Helvetica", sans-serif;
+}
+
+/* BLOCKS ******************************************************************************/
+#wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.header-content {
+  margin: auto;
+  width: 75%;
+  background-color: #000000;
+}
+
+.nav-menu {
+  margin: auto;
+  background-color: #808080;
+}
+
+.main-content {
+  margin: auto;
+  width: 75%;
+}
+
+.skills-table {
+  margin: auto;
+  padding: 30px;
+  width: 75%;
+  background-color: #000000;
+}
+
+.footer-content {
+  margin: 30px auto;
+  width: 75%;
+  background-color: #000000;
+}
+
+.copyright-container {
+  padding: 10px;
+  color: white;
+  font-size: .5em;
+}
+/* ELEMENTS ****************************************************************************/
+.nav-container__header {
+  padding: 5px;
+  color: white;
+  font-size: 3em;
+}
+
+.nav-menu__item {
+  list-style-type: none;
+  padding: 5px;
+  border: 1px solid #ffffff;
+}
+
+.nav-menu__link {
+  text-decoration: none;
+  color: white;
+}
+
+.skills-container__header {
+  padding: 10px;
+}
+
+.skills-table__head th {
+  padding: 12px;
+  border-bottom: 2px solid #ffffff;
+  color: white;
+  font-size: 1.25em;
+}
+
+.skills-table__body td {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/*Coudn't get this and jqeury hover to work together*/
+/*.skills-table__body tr:nth-child(even) {
+  background-color: #808080;
+}*/
+
+.footer-menu__items {
+  padding: 10px;
+  background-color: #808080; 
+}
+
+.footer-menu__link {
+  color: white;
+}
+
+.hover {
+  background-color: #808080;
+}
+
+/* MODIFIERS ***************************************************************************/
+
+
+/* MEDIA QUERIES ***********************************************************************/
+@media screen and (min-width: 800px) {
+  .nav-menu {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
+  
+  .nav-menu__item {
+    display: table-cell;
+    padding: 5px;
+    width: auto;
+    list-style-type: none;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
