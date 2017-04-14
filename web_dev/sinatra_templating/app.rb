@@ -17,10 +17,32 @@ get '/students/new' do
   erb :new_student
 end
 
-# create new students via
-# a form
+get '/students/campus' do
+  @campus_data = db.execute("SELECT * FROM students WHERE campus=?", params[:campus])
+  erb :campus
+end
+
+get '/students/campus/:campus' do
+  @campus_data = db.execute("SELECT * FROM students WHERE campus=?", params[:campus])
+  erb :campus
+end
+
+get '/students/:id' do
+  id = params[:id]
+  @students = db.execute("SELECT * FROM students WHERE id?", id)
+  erb :new_student
+end
+
+# create new students via a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
+  redirect '/'
+end
+
+# delete students via a form
+post '/students/delete' do
+  id = params["id"]
+  db.execute("DELETE FROM students WHERE id=?", id)
   redirect '/'
 end
 
