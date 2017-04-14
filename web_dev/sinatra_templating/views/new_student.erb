@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Create a New Student</title>
+  <title>Create or Delete Student</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <h1>Create New Student</h1>
   <form action="/students" method="POST">
     <input type="text" name="name" placeholder="Name">
     <input type="text" name="campus" placeholder="Campus">
     <input type="text" name="age" placeholder="Age">
     <button type="submit">Save</button>
   </form>
+  <br>
+  <h1>Delete Student By ID</h1>
+    <form action="/students/delete" method="POST">
+    <input type="text" name="id" placeholder="ID">
+    <button type="submit">Delete</button>
+  </form>
+
 </body>
 </html>
